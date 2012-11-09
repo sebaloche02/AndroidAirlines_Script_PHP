@@ -18,8 +18,7 @@ if($nomTable == 'avion'){
 $resultat=$connexion->prepare("SELECT avion.idAvion,avion.numImmatriculation,avion.dateMisEnService,avion.nombreHeureTotale,
 avion.nbHeureVolDepuisGrandeRevision,avion.nbHeureVolDepuisPetiteRevision,avion.statut,modele.nomModele, avion.idModele,
 aliasAeroLocalisation.nomAeroport AS aeroL,aliasAeroAttache.nomAeroport AS aeroA,
-revision.idRevision, revision.immatriculationAvion, revision.datePrevue,revision.dateDebut,revision.dateFin,
-revision.commentaire,revision.statutRevision,revision.idAvion 
+revision.idRevision, revision.datePrevue, revision.statutRevision 
 FROM avion INNER JOIN modele on avion.idModele=modele.idModele 
 INNER JOIN aeroport AS aliasAeroAttache on avion.idAeroportDattache=aliasAeroAttache.idAeroport 
 INNER JOIN aeroport AS aliasAeroLocalisation on avion.localisation=aliasAeroLocalisation.idAeroport 
